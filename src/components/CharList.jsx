@@ -1,9 +1,9 @@
-import { Flex } from "@chakra-ui/react"
+import { Flex, Spinner } from "@chakra-ui/react"
 import { CharCard } from "./CharCard"
 
-export const CharList = ({characters}) => {
+export const CharList = ({ characters }) => {
   return (
-    <Flex wrap='wrap'>
+    <Flex wrap='wrap' justify='center' gap='1%'>
       {characters.map((char) => (
         <CharCard
           key={char.id}
@@ -11,7 +11,7 @@ export const CharList = ({characters}) => {
           charImg={char.image}
           charStatus={char.status}
           charGender={char.gender}
-          charSpecie={char.species}
+          charSpecies={char.species}
           charLocation={char.location.name}
         />
       ))}
