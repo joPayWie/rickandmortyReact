@@ -7,7 +7,13 @@ import { SearchBar } from "./components/SearchBar";
 import { CharList } from "./components/CharList";
 import { PageButtons } from "./components/PageButtons";
 
-import { Spinner, Alert, AlertIcon, AlertTitle, AlertDescription } from "@chakra-ui/react";
+import {
+  Spinner,
+  Alert,
+  AlertIcon,
+  AlertTitle,
+  AlertDescription,
+} from "@chakra-ui/react";
 
 import "./App.css";
 
@@ -45,22 +51,21 @@ function App() {
 
   useEffect(() => {
     setIsLoading(true);
-
-      axios
-        .get(
-          `https://rickandmortyapi.com/api/character/?name=${filterValues.name}&status=${filterValues.status}&gender=${filterValues.gender}&page=${pageNumber}`
-        )
-        .then(function (res) {  
-          setIsLoading(false);
-          setError(false)
-          setMaxApiPages(res.data.info.pages);
-          setCharacters(res.data.results);
-        })
-      .catch (function (error) {
-        setError(true)
+    axios
+      .get(
+        `https://rickandmortyapi.com/api/character/?name=${filterValues.name}&status=${filterValues.status}&gender=${filterValues.gender}&page=${pageNumber}`
+      )
+      .then(function (res) {
+        setIsLoading(false);
+        setError(false);
+        setMaxApiPages(res.data.info.pages);
+        setCharacters(res.data.results);
+      })
+      .catch(function (error) {
+        setError(true);
         setCharacters([]);
-      })  
-      .finally(setIsLoading(false))
+      })
+      .finally(setIsLoading(false));
   }, [pageNumber, filterValues]);
 
   return (

@@ -24,7 +24,7 @@ export const SearchBar = ({
 
   return (
     <form onSubmit={(e) => handleSubmit(e)}>
-      <Flex margin="2%">
+      <Flex margin="2%" direction={{ base: 'column', md:'row'}}>
         <InputGroup size="md">
           <Input
             pr="4.5rem"

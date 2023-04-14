@@ -17,9 +17,9 @@ export const PageButtons = ({ pageNumber, setPageNumber, maxApiPages }) => {
         fontSize="1.25rem"
         fontWeight="bold"
         borderRadius="30px"
-        background='#e6e6e6'
-        padding='0px 11px'
-        color='black'
+        background="#e6e6e6"
+        padding="0px 11px"
+        color="black"
       >
         {pageNumber}
       </Text>
